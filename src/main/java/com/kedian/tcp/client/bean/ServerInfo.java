@@ -13,10 +13,10 @@ public class ServerInfo {
     private int port;
     private String address;
 
-    public ServerInfo(String sn, int port, String address) {
+    public ServerInfo(int port, String ip, String sn) {
         this.sn = sn;
         this.port = port;
-        this.address = address;
+        this.address = ip;
     }
 
     public String getSn() {

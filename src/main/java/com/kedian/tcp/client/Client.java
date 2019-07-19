@@ -1,5 +1,9 @@
 package com.kedian.tcp.client;
 
+import com.kedian.tcp.client.bean.ServerInfo;
+
+import java.io.IOException;
+
 /**
  * @author wuzh
  * @version V1.0
@@ -9,4 +13,16 @@ package com.kedian.tcp.client;
  */
 public class Client {
 
+    public static void main(String[] args) {
+        ServerInfo info = UDPSearcher.searchServer(10000);
+        System.out.println("Server:" + info);
+
+        if (info != null) {
+            try {
+                TCPClient.linkWith(info);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
